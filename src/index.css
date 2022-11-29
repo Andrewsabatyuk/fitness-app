@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #393f4d;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {
@@ -23,8 +24,6 @@ body {
   align-items: center;
   color: #FF2625;
   border-radius: 4px;
-  /* bottom: -50px;
-  right: 50px; */
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
 }

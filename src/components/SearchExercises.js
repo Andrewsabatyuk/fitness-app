@@ -81,5 +81,3 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
 }
 
 export default SearchExercises
-
-// https://www.youtube.com/watch?v=KBpoBc98BwM&t=1445s&ab_channel=JavaScriptMastery 1/01

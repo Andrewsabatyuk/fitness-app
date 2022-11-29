@@ -31,7 +31,7 @@ const HorizonlasScrollBar = ({ data, bodyPart, setBodyPart }) => {
             {data.map((item) => (
                 <Box
                     key={item.id || item}
-                    itemId={item.id || item}
+                    itemID={item.id || item}
                     title={item.id || item}
                     m='0 40px'
                 >
@@ -43,5 +43,3 @@ const HorizonlasScrollBar = ({ data, bodyPart, setBodyPart }) => {
 }
 
 export default HorizonlasScrollBar
-
-// https://www.youtube.com/watch?v=KBpoBc98BwM&t=1445s&ab_channel=JavaScriptMastery 1/12
