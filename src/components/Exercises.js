@@ -3,6 +3,7 @@ import Pagination from '@mui/material/Pagination'
 import { Box, Stack, Typography } from '@mui/material'
 import { exerciseOptions, fetchData } from '../utils/fetchDatd'
 import ExerciseCard from './ExerciseCard'
+import Loader from './Loader'
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
@@ -37,7 +38,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     fetchExercisesData();
   }, [bodyPart]);
 
-
   return (
     <Box id='exercises'
       sx={{ mt: { lg: '110px' } }}
@@ -52,7 +52,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       </Stack>
       <Stack mt='100px' alignItems='center'>
         {exercises.length > 9 && (
-          <Pagination color="standard"
+          <Pagination
+            color="standard"
             shape="rounded"
             defaultPage={1}
             count={Math.ceil(exercises.length / exercisesPerRage)}
@@ -66,6 +67,3 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 }
 
 export default Exercises
-
-
-// https://www.youtube.com/watch?v=KBpoBc98BwM&t=1445s&ab_channel=JavaScriptMastery 1/22

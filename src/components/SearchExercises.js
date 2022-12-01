@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Stack, Typography, Button, TextField } from '@mui/material'
 import { fetchData, exerciseOptions } from '../utils/fetchDatd'
-import HorizonlasScrollBar from './HorizonlasScrollBar'
+import HorizontalScrollBar from './HorizontalScrollBar'
 
-const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
+const SearchExercises = ({ setExercises, bodyPart, setBodyPart, isBodyParts }) => {
 
     const [searchExercises, setSearchExercises] = useState('')
-   
     const [bodyParts, setBodyParts] = useState([])
 
     useEffect(() => {
-      const fetchExercisesData = async () => {
-        const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions)
+        const fetchExercisesData = async () => {
+            const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
 
-        setBodyParts(['all', ...bodyPartsData])
-      }
-      fetchExercisesData()
-    }, [])
-    
+            setBodyParts(['all', ...bodyPartsData]);
+        };
+
+        fetchExercisesData();
+    }, []);
+
 
     const handleSearch = async () => {
         if (searchExercises) {
@@ -73,8 +73,8 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
                     onClick={handleSearch}
                 >Search</Button>
             </Box>
-            <Box sx={{position:'relative', width: '100%', p:'20px'}}>
-                    <HorizonlasScrollBar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+            <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
+                <HorizontalScrollBar data={bodyParts} isBodyParts={isBodyParts} setBodyPart={setBodyPart} bodyPart={bodyPart} />
             </Box>
         </Stack >
     )
