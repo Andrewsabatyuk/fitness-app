@@ -70,11 +70,16 @@ body {
   height: 381px;
   text-decoration: none;
 }
+.detail-image {
+  width: 500px;
+  height: 600px;
+  border-radius: 25px;
+}
 
 @media screen and (max-width:1200px) {
   .detail-image {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
 
 
